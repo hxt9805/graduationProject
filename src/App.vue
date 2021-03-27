@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div>
+        <shop-nav></shop-nav>
+        <router-view/>
+    </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import ShopNav from "./components/Nav";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        data() {
+            return {
+
+            }
+        },
+        components: {
+            ShopNav,
+        },
+        mounted() {
+            this.$Loading.config({
+                color: '#5cb85c',
+                failedColor: '#f0ad4e',
+                height: 5
+            });
+
+        }
+    }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+    @import "../node_modules/animate.css/animate.css";
 </style>
